@@ -1,4 +1,4 @@
-var video = document.getElementById("#player1");
+var video = document.querySelector("#player1");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -22,17 +22,17 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 
-	console.log("Volume is now at" + video.playbckRate + "%")
-	video.playbckRate = video.playbckRate * .95
-
+	console.log("Slower");
+	video.playbackRate = video.playbackRate * .95;
+	console.log(video.playbackRate)
 
    });
 
 document.querySelector("#faster").addEventListener("click", function() {
 
-	console.log("Volume is now at" + video.playbckRate + "%")
-	video.playbckRate = video.playbckRate / .95
-
+	console.log("Faster");
+	video.playbackRate = video.playbackRate * 1.05;
+	console.log(video.playbackRate)
 
     });
 
@@ -72,10 +72,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 document.querySelector("#slider").addEventListener("click", function() {
 
-		 var curr_vol = document.querySelector("#slider").value;
-		 video.volume = curr_vol / 100;
-		 document.querySelector("#volume").innerHTML = video.volume + "%";
-		 console.log("Volume is now at" + video.volume + "%")
+	var curr_vol = document.querySelector("#slider").value;
+	video.volume = curr_vol / 100;
+	document.querySelector("#volume").innerHTML= video.volume + "%";
+	console.log("Volume is " + video.volume + "%")
 
 });
 
