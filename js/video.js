@@ -72,10 +72,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 document.querySelector("#slider").addEventListener("click", function() {
 
-	var curr_vol = document.querySelector("#slider").value;
-	video.volume = curr_vol / 100;
-	document.querySelector("#volume").innerHTML= video.volume + "%";
-	console.log("Volume is " + video.volume + "%")
+	var curr_vol = document.querySelector("#slider").value / 100;
+	video.volume = curr_vol
+	console.log(video.volume);
+	document.querySelector('#volume').innerHTML = video.volume * 100 + "%"
 
 });
 
